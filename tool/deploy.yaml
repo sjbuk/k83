@@ -1,23 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-app-deployment
+  name: nginx-deployment
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: simple-app
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: simple-app
+        app: nginx
     spec:
       containers:
-      - name: simple-app
-        image: victorelvis/simple-app
-        resources:
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
+      - name: nginx
+        image: nginx:1.14.2
         ports:
-        - containerPort: 3000
+        - containerPort: 80
