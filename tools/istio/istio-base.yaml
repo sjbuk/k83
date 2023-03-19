@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: istio
   # You'll usually want to add your resources to the argocd namespace.
-  namespace: argocd
+  namespace: istio-system
   # Add this finalizer ONLY if you want these to cascade delete.
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,10 +12,10 @@ metadata:
     name: istio
 spec:
   project: default
-  source:
-    repoURL: 'istio-release.storage.googleapis.com/charts'
-    targetRevision: 1.17.1
-    chart: istio-base
+  sources:
+    - repoURL: 'istio-release.storage.googleapis.com/charts'
+      targetRevision: 1.17.1
+      chart: istio-base
   destination:
     server: 'https://kubernetes.default.svc'
   syncPolicy:
