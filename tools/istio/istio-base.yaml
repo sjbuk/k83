@@ -12,10 +12,10 @@ metadata:
     name: istio
 spec:
   project: default
-  sources:
-    - repoURL: 'istio-release.storage.googleapis.com/charts'
-      targetRevision: 1.17.1
-      chart: istio-base
+  source:
+    repoURL: 'istio-release.storage.googleapis.com/charts'
+    targetRevision: 1.17.1
+    chart: istio-base
   destination:
     server: 'https://kubernetes.default.svc'
   syncPolicy:
