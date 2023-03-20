@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: kyverno
   # You'll usually want to add your resources to the argocd namespace.
-  namespace: kyverno
+  namespace: argocd
   # Add this finalizer ONLY if you want these to cascade delete.
   finalizers:
     - resources-finalizer.argocd.argoproj.io
