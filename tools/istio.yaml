@@ -3,10 +3,12 @@ kind: Application
 metadata:
   name: istio
   namespace: argocd
+  labels:
+    name: kyverno
 spec:
   destination:
-    name: ''
-    namespace: istio
+    name: 'istio'
+    namespace: istio-system
     server: 'https://kubernetes.default.svc'
   source:
     path: ''
