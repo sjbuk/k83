@@ -1,0 +1,1 @@
+cubectl apply -f https://github.com/sjbuk/k83/blob/main/bootstrap/bootstrap.yaml
