@@ -2,13 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bootstrap
+  namespace: argocd
 spec:
   destination:
     name: ''
-    namespace: ''
+    namespace: 'argocd'
     server: 'https://kubernetes.default.svc'
   source:
-    path: bootstrap
+    path: tools
     repoURL: 'https://github.com/sjbuk/k83.git'
     targetRevision: HEAD
   sources: []
