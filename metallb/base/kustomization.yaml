@@ -1,0 +1,5 @@
+resources:
+  - metallb-native.yaml
+  - metallb-bgp-peer.yaml
+  - metallb-bgp-pool.yaml
+  - metallb-bgp-advertise.yaml
