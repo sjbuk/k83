@@ -1,8 +1,8 @@
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
 metadata:
-  name: first-pool
-  namespace: metallb-system
+  name: longhorn-frontend
+  namespace: longhorn-system
 spec:
-  addresses:
-  - 192.168.11.10 - 192.168.11.90
+    hosts:
+    - "devlonghorn.bonnell.me.uk"
