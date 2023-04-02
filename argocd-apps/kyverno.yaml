@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno
+spec:
+  destination:
+    name: ''
+    namespace: kyverno
+    server: ''
+  source:
+    path: kyverno/base
+    repoURL: 'https://github.com/sjbuk/k83.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
