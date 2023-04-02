@@ -11,6 +11,8 @@ spec:
       name: http
       number: 80
       protocol: HTTP
+    hosts:
+    - "argocd.dev.bonnell.me.uk"
   - port:
       name: https
       number: 443
