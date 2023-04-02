@@ -8,8 +8,8 @@ spec:
     istio: ingressgateway
   servers:
   - port:
+      name: http
       number: 80
-      name: argocd-server
       protocol: HTTP
     hosts:
     - "argocd.dev.bonnell.me.uk"
