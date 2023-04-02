@@ -6,7 +6,7 @@ spec:
   destination:
     name: ''
     namespace: kyverno
-    server: ''
+    server: 'https://kubernetes.default.svc'
   source:
     path: kyverno/base
     repoURL: 'https://github.com/sjbuk/k83.git'
