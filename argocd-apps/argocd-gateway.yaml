@@ -8,7 +8,7 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: argocd-loadbalance/base
+    path: argocd-loadbalancer/base
     repoURL: 'https://github.com/sjbuk/k83.git'
     targetRevision: HEAD
   sources: []
