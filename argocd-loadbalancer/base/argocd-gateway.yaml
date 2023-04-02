@@ -11,5 +11,8 @@ spec:
       name: https
       number: 443
       protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: argocd-secret
     hosts:
     - "argocd.dev.bonnell.me.uk"
