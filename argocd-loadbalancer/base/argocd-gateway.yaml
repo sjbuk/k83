@@ -1,15 +1,15 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: longhorn-frontend
-  namespace: longhorn-system
+  name: argocd-server
+  namespace: argocd
 spec:
   selector:
     istio: ingressgateway
   servers:
   - port:
       number: 80
-      name: longhorn-frontend
+      name: argocd-server
       protocol: HTTP
     hosts:
-    - "longhorn.dev.bonnell.me.uk"
+    - "argocd.dev.bonnell.me.uk"

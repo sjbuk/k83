@@ -1,0 +1,3 @@
+resources:
+  - argocd-gateway.yaml
+  - argocd-virtservice.yaml

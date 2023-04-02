@@ -1,16 +1,16 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: longhorn-frontend
-  namespace: longhorn-system
+  name: argocd-server
+  namespace: argocd
 spec:
   hosts:
-  - "longhorn.dev.bonnell.me.uk"
+  - "argocd.dev.bonnell.me.uk"
   gateways:
-  - longhorn-frontend
+  - argocd-server
   http:
     - route:
       - destination:
-          host: longhorn-frontend
+          host: argocd-server
           port:
             number: 80
