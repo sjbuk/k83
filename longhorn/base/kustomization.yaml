@@ -1,4 +1,4 @@
 resources:
-  - longhorn-gateway.yaml
+  - longhorn.yaml
   - longhorn-gateway.yaml
   - longhorn-virtservice.yaml
