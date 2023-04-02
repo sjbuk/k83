@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metal lb
+spec:
+  destination:
+    name: ''
+    namespace: metallb
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: metallb/environments/dev
+    repoURL: 'https://github.com/sjbuk/k83.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
