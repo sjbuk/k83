@@ -1,4 +1,4 @@
-#Interactive run: docker run -it --rm --network="host"  -v c:\users\stuar\.kube:/root/.kube -v d:\dev:/root/dev  sjbuk/k8sadmin:01.00.00 /bin/bash
+#Interactive run: docker run -it --rm --network="host"  -v c:\users\stuar\.kube:/root/.kube -v d:\dev:/root/dev  sjbuk/k8sadmin:01.00.01 /bin/bash
 
 #Vault download https://developer.hashicorp.com/vault/downloads
 
