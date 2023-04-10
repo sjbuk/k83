@@ -1,0 +1,56 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: nginx-gateway
+  namespace: certtest
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - "test.bonnell.me.uk"
+---
+apiVersion: networking.istio.io/v1alpha
+kind: VirtualService
+metadata:
+  name: nginx-virtualservice
+  namespace: certtest
+spec:
+  hosts:
+  - "test.bonnell.me.uk"
+  gateways:
+  - nginx-gateway
+  https:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: nginx
+        port:
+          number: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: certtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80

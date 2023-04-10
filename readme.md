@@ -17,3 +17,8 @@ kubectl port-forward svc/argocd-server -n argocd 8080:80
 
 #!NOW VIA ARGOCD STEP 2 Install MetalLB
  kubectl kustomize .\metallb\environments\dev
+
+
+ ##Cert-manager
+ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
+ 
